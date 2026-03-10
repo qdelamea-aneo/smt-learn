@@ -26,7 +26,7 @@ class And(Formula):
         self.args = args
 
     def __str__(self) -> str:
-        args_str = " ".join(str(arg) for arg in self.args)
+        args_str = "\n\t".join(str(arg) for arg in self.args)
         return f"(and {args_str})"
 
 
@@ -83,3 +83,25 @@ class LessThan(Formula):
 
     def __str__(self) -> str:
         return f"({'<' if self.strict else '<='} {self.left} {self.right})"
+
+
+class Add(Formula):
+    """Represents an addition formula (e.g., (+ x y))."""
+
+    def __init__(self, *args: Formula):
+        self.args = args
+
+    def __str__(self) -> str:
+        args_str = " ".join(str(arg) for arg in self.args)
+        return f"(+ {args_str})"
+
+
+class Mul(Formula):
+    """Represents a multiplication formula (e.g., (* x y))."""
+
+    def __init__(self, *args: Formula):
+        self.args = args
+
+    def __str__(self) -> str:
+        args_str = " ".join(str(arg) for arg in self.args)
+        return f"(* {args_str})"
