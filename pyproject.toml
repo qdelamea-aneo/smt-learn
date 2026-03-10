@@ -1,0 +1,9 @@
+[project]
+name = "pysmt"
+version = "0.1.0"
+description = "Lightweight Python library for generating specifications to the SMT-Lib V2 standard."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+
