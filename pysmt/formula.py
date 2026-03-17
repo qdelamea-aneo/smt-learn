@@ -105,3 +105,25 @@ class Mul(Formula):
     def __str__(self) -> str:
         args_str = " ".join(str(arg) for arg in self.args)
         return f"(* {args_str})"
+
+
+class Distinct(Formula):
+    """Represents a distinct formula (e.g., (distinct x y z))."""
+
+    def __init__(self, *args: Formula):
+        self.args = args
+
+    def __str__(self) -> str:
+        args_str = " ".join(str(arg) for arg in self.args)
+        return f"(distinct {args_str})"
+
+
+class Minus(Formula):
+    """Represents a subtraction formula (e.g., (- x y))."""
+
+    def __init__(self, left: Formula, right: Formula):
+        self.left = left
+        self.right = right
+
+    def __str__(self) -> str:
+        return f"(- {self.left} {self.right})"
